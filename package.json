@@ -9,7 +9,7 @@
     "favicon": "gulp favicon",
     "validate": "html-validator dist"
   },
-  "author": "https://github.com/Stella-A",
+  "author": "https://github.com/our-wedding-28-08",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.25.7",
