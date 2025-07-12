@@ -1,0 +1,49 @@
+<head>
+  <!-- meta -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="format-detection" content="date=no">
+  <meta name="format-detection" content="address=no">
+  <meta name="format-detection" content="email=no">
+  <meta name="description" content="@@description">
+  <meta name="keywords" content="@@keywords">
+  <meta property="og:url" content="https://@@site_name">
+  <meta property="og:site_name" content="@@site_name">
+  <meta property="og:title" content="@@title">
+  <meta property="og:description" content="@@description">
+  <meta property="og:image" content="./img/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="./img/og-image.jpg">
+
+  <!-- favicon -->
+  @@include("./favicon.html")
+
+  <!-- title -->
+  <title>@@title</title>
+
+  <!-- preload source -->
+  <link rel="preload" href="./css/fonts.min.css" as="style">
+  <link rel="preload" href="./css/main.min.css" as="style">
+  <link rel="preload" href="./css/anim.min.css" as="style" media="(prefers-reduced-motion: no-preference)">
+  <link rel="preload" href="./js/main.min.js" as="script">
+
+  <!-- styles -->
+  <link rel="stylesheet" href="./css/fonts.min.css">
+  <link rel="stylesheet" href="./css/main.min.css">
+  <link rel="stylesheet" href="./css/anim.min.css" media="(prefers-reduced-motion: no-preference)">
+
+  <script>
+    let setVH = function () {
+      let vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty(`--vh`, `${vh}px`);
+    };
+
+    setVH();
+
+    window.addEventListener(`resize`, () => {
+      setVH();
+    });
+  </script>
+</head>
