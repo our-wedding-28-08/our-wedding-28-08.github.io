@@ -1,0 +1,148 @@
+@use "../helpers/normalize";
+@use "../helpers/mixin" as mixin;
+
+:root {
+  /* colors */
+
+  /* background */
+
+  /* border */
+
+  /* icons */
+
+  /* timing functions */
+  --easeing: cubic-bezier(0.59, 0, 0.44, 1.07);
+
+  font-size: 1vw;
+
+  @media screen and (max-width: 699px) {
+    font-size: 10px;
+  }
+}
+
+::selection {}
+
+::-webkit-scrollbar {
+  @media screen and (max-width: 999px) {
+    display: none;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+  &:focus-visible {
+    outline: none;
+  }
+
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+}
+
+[hidden],
+[type="hidden"],
+.visually-hidden,
+.tns-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+html {
+  /* font */
+  --ff: "Inter", sans-serif;
+  --fz: max(1vw, 16px);
+
+  /* offset */
+  --offset: max(calc(1.25 * 1vw), 15px);
+
+  /* size */
+
+  /* radius */
+}
+
+body {
+  font-family: var(--ff);
+  font-weight: var(--fwR);
+  font-size: var(--fz);
+  line-height: 1.4;
+  max-width: 100%;
+  min-width: 360px;
+  margin: 0;
+  text-wrap: balance;
+  overflow: auto;
+  overflow-x: hidden;
+
+  &.modal-open {
+    overflow: hidden;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition-property: color, fill, background-color, border-color;
+  transition-duration: 0.3s;
+  transition-timing-function: var(--easeing);
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  user-select: none;
+  pointer-events: none;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  font-family: var(--ff);
+  text-align: left;
+  font-size: 1em;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+button[data-opener] > *,
+a[data-opener] > * {
+  pointer-events: none;
+}
+
+details {
+}
+
+summary {
+  list-style: none;
+  cursor: pointer;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+.btn {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  margin: 0;
+}
