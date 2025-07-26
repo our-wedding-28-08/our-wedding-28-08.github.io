@@ -19,7 +19,7 @@ export const html = () => {
       preserve_newlines: true,
       extra_liners: ["html, head, body"],
     }))
-    .pipe(dest("dist"));
+    .pipe(dest("./"));
     /*.pipe(through2.obj((file, enc, callback) => {
       w3cHtmlValidator.validate({filename: file.path})
         .then((result) => {
@@ -41,7 +41,7 @@ export const htmlMinify = () => {
     .pipe(htmlmin({
       collapseWhitespace: true
     }))
-    .pipe(dest("dist"))
+    .pipe(dest("./"))
     .pipe(through2.obj((file, enc, callback) => {
       w3cHtmlValidator.validate({filename: file.path})
         .then((result) => {
