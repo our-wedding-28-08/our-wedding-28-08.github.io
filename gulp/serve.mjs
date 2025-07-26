@@ -18,7 +18,7 @@ function reload(cb) {
 export const serve = (cb) => {
   server.init({
     port: 80,
-    server: "dist",
+    server: "./",
     notify: false,
     open: true,
     cors: true

@@ -10,7 +10,7 @@ export const script = () => {
     .pipe(webpack({
       mode: "production",
       output: {
-        publicPath: "/js/",
+        publicPath: "./dist/js/",
         filename: "[name].min.js",
       },
       optimization: {
