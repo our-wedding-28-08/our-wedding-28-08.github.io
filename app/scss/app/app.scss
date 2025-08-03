@@ -3,8 +3,17 @@
 
 :root {
   /* colors */
+  --c1: #5d4832;
+  --c2: #d6c4b5;
+  --c3: #ffffff;
+  --c4: #c3ad93;
+  --c5: #af9e8c;
 
   /* background */
+  --bg1: #f3f2ef;
+  --bg2: #f2f1f2;
+  --bg3: #e2d3bf;
+  --bg4: #d6c4b5;
 
   /* border */
 
@@ -20,7 +29,10 @@
   }
 }
 
-::selection {}
+::selection {
+  color: var(--c5);
+  background-color: var(--bg2);
+}
 
 ::-webkit-scrollbar {
   @media screen and (max-width: 999px) {
@@ -65,7 +77,9 @@ body {
 
 html {
   /* font */
-  --ff: "Inter", sans-serif;
+  --ff: "PoiretOne", sans-serif;
+  --fftitle: "Annabelle", sans-serif;
+  --fwR: 400;
   --fz: max(1vw, 16px);
 
   /* offset */
@@ -85,8 +99,8 @@ body {
   min-width: 360px;
   margin: 0;
   text-wrap: balance;
-  overflow: auto;
-  overflow-x: hidden;
+  color: var(--c1);
+  background-color: var(--bg1);
 
   &.modal-open {
     overflow: hidden;
@@ -144,5 +158,54 @@ summary::-webkit-details-marker {
 }
 
 .title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0;
+  font-family: var(--fftitle);
+  font-weight: var(--fwR);
+  line-height: 1;
+  color: var(--c1);
+
+  &--l {
+    font-size: clamp(2.6em, 8vw, 8em);
+
+    span {
+      margin-top: 0.15em;
+      margin-left: -0.25em;
+      margin-right: -0.25em;
+      font-size: 2.5em;
+      color: var(--c4);
+      user-select: none;
+      opacity: 0.6;
+      z-index: -1;
+
+      @media screen and (max-width: 999px) {
+        color: var(--c2);
+        opacity: 0.2;
+        z-index: 0;
+      }
+    }
+
+    b {
+      font-weight: var(--fwR);
+
+      @media screen and (max-width: 999px) {
+        z-index: 1;
+      }
+    }
+  }
+
+  &--m {
+    flex-direction: column;
+    font-size: clamp(2.6em, 4vw, 4em);
+    line-height: 1.4;
+
+    small {
+      display: block;
+      margin-top: 0.4em;
+      font-size: 0.6em;
+      color: var(--c5);
+    }
+  }
 }
